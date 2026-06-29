@@ -1,0 +1,26 @@
+import java.util.Map;
+import java.util.List;
+import java.util.*;
+
+public class PickPeaks {
+    
+    public static Map<String,List<Integer>> getPeaks(int[] arr) {
+      ArrayList<Integer>pos = new ArrayList<>();
+      ArrayList<Integer>peak = new ArrayList<>();
+      Integer possiblepeak = null;
+      for(int i = 1;i<arr.length;i++){
+        if(arr[i]>arr[i-1]){
+          possiblepeak = i;
+        }
+      else if(arr[i]<arr[i-1]&&possiblepeak!=null){
+        pos.add(possiblepeak);
+        peak.add(arr[possiblepeak]);
+        possiblepeak=null;
+      }
+        }
+      HashMap<String,List<Integer>>map = new HashMap<>();
+      map.put("pos",pos);
+      map.put("peaks",peak);
+      return map;
+    }
+}
