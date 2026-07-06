@@ -1,0 +1,14 @@
+public class SquareDigit {
+
+  public int squareDigits(int n) {
+    String str = String.valueOf(n);
+    String ans = "";
+    
+    for(int i  =0;i<str.length();i++){
+      int digit = str.charAt(i)-'0';
+      ans+=digit*digit;
+      
+    }
+    return Integer.parseInt(ans);
+  }
+}
