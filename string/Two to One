@@ -1,0 +1,18 @@
+import java.util.*;
+public class TwoToOne {
+    
+    public static String longest (String s1, String s2) {
+        TreeSet<Character>set = new TreeSet<>();
+      for(char ch:s1.toCharArray()){
+        set.add(ch);
+      }
+      for(char ch:s2.toCharArray()){
+        set.add(ch);
+      }
+      StringBuilder st = new StringBuilder();
+      for(char ch:set){
+        st.append(ch);
+      }
+      return st.toString();
+    }
+}
