@@ -1,0 +1,27 @@
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        boolean happy = true;
+        HashSet<Integer>seen = new HashSet<>();
+        while(n!=1){
+
+            if(seen.contains(n)){
+                happy = false;
+                return;
+            }
+            int sum = 0;
+            seen.add(n);
+            while(n>0){
+                int d = n%10;
+                sum+= d*d;
+                n = n/10;
+            }
+            n = sum;
+        }
+        
+        System.out.println(happy);
+    }
+}
